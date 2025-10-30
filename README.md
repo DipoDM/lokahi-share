@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lokahi Share
 
-## Getting Started
+Public deep linking site for the Ohana app.
 
-First, run the development server:
+## Purpose
+
+This lightweight Next.js site handles:
+- iOS Universal Links verification (`.well-known/apple-app-site-association`)
+- Android App Links verification (`.well-known/assetlinks.json`)
+- Public event landing pages at `/event/:id`
+- App download links for users without the app installed
+
+## Features
+
+- ✅ **No Authentication Required** - Public access for sharing
+- ✅ **Universal/App Links** - Opens directly in the Ohana app if installed
+- ✅ **Fallback Landing Page** - Shows download links if app not installed
+- ✅ **Minimal & Fast** - Lightweight Next.js 16 with Tailwind CSS
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Deploy to Vercel via GitHub integration or CLI.
 
-## Learn More
+## Deep Link Format
 
-To learn more about Next.js, take a look at the following resources:
+Event links: `https://your-domain.com/event/{eventId}`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Verification
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+After deployment, verify files are accessible:
+- iOS: https://your-domain.com/.well-known/apple-app-site-association
+- Android: https://your-domain.com/.well-known/assetlinks.json
