@@ -74,11 +74,6 @@ export default function EventPage() {
             </a>
           </div>
         </div>
-
-        {/* Event ID (for debugging) */}
-        <div className="mt-6 text-xs text-gray-400 font-mono">
-          Event ID: {eventId}
-        </div>
       </div>
     </div>
   );
